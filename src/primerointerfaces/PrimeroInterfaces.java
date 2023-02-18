@@ -6,8 +6,7 @@ import java.util.Scanner;
 public class PrimeroInterfaces {
 
     public static void MENU() {
-        
-        
+
         System.out.println();
         System.out.println("1).Dar Transatlantico de alta");
         System.out.println("2).Dar Container de alta");
@@ -29,17 +28,15 @@ public class PrimeroInterfaces {
     }
 
     public static void main(String[] args) {
-        
-        
-        
+
         Scanner sn = new Scanner(System.in);
         ArrayList<Barco> barcos = new ArrayList();
         barcos.add(new Transatlantico());
         barcos.add(new Container());
+        barcos.add(new HidroAvion());
         int caso;
         int buscar;
-        
-        
+
         do {
             MENU();
             caso = sn.nextInt();
@@ -155,7 +152,7 @@ public class PrimeroInterfaces {
                         int dismin = sn.nextInt();
                         System.out.println("cual es la velociada del viento?(k/h)");
                         int viento = sn.nextInt();
-                        boolean resp=hidro.aterrizar(dismin, viento);
+                        boolean resp = hidro.aterrizar(dismin, viento);
                         if (resp) {
                             System.out.println("puede aterrizar");
                         } else {
@@ -184,8 +181,8 @@ public class PrimeroInterfaces {
                 case 15:
                     buscar = buscarBarco(barcos);
                     if (barcos.get(buscar) instanceof HidroAvion hidro) {
-                        int peso=hidro.VerPeso();
-                        System.out.println("El peso es "+peso);
+                        int peso = hidro.VerPeso();
+                        System.out.println("El peso es " + peso);
                     } else {
                         System.out.println("No es un HidroAvion");
                     }
@@ -197,11 +194,9 @@ public class PrimeroInterfaces {
         System.out.println("Fin");
     }
 
-    
-    
     public static int buscarBarco(ArrayList<Barco> barcos) {
         Scanner sn = new Scanner(System.in);
-        System.out.println("Nombre del barco");
+        System.out.println("Nombre del aparato");
         String buscar = sn.next();
         int devolver = -1;
 
@@ -213,6 +208,11 @@ public class PrimeroInterfaces {
                 }
             } else if (barcos.get(i) instanceof Transatlantico tran) {
                 if (buscar.equalsIgnoreCase(tran.nombre)) {
+
+                    return i;
+                }
+            } else if (barcos.get(i) instanceof HidroAvion hidro) {
+                if (buscar.equalsIgnoreCase(hidro.nombre)) {
 
                     return i;
                 }

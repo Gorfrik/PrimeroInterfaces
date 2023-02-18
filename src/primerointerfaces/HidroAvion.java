@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HidroAvion implements Barco, Avion {
 
-    int id;
+    String nombre;
     boolean estado = false;
     int potencia;
     int dist_min;
@@ -13,6 +13,16 @@ public class HidroAvion implements Barco, Avion {
     int hora_atraque;
     int peso;
     int peso_max;
+
+    public HidroAvion() {
+        this.nombre = "3";
+        this.potencia = 5000;
+        this.dist_min = 1000;
+        this.lugar_atraque = "casita";
+        this.hora_atraque = 12;
+        this.peso = 2000;
+        this.peso_max = 5000;
+    }
 
     public boolean undirse() {
         return estado;
@@ -24,14 +34,14 @@ public class HidroAvion implements Barco, Avion {
     }
 
     public void verDatos() {
-        System.out.println("El id es " + id);
+        System.out.println("El id es " + nombre);
         if (estado) {
             System.out.println("Esta hundido");
         } else {
             System.out.println("Flota");
         }
         System.out.println("Tiene " + potencia + " de potencia");
-        System.out.println("Tiene una distancia minima de despegue de" + dist_min);
+        System.out.println("Tiene una distancia minima de despegue de " + dist_min);
         System.out.println("Su lugar de atraque es " + lugar_atraque);
         System.out.println("La hora de traque es " + hora_atraque);
         System.out.println("Tiene un peso maximo de " + peso_max);
@@ -40,7 +50,7 @@ public class HidroAvion implements Barco, Avion {
     public void alta() {
         Scanner sn = new Scanner(System.in);
         System.out.println("Dime el id");
-        id = sn.nextInt();
+        nombre = sn.next();
         System.out.println("Cuanta potencia tiene?");
         potencia = sn.nextInt();
         System.out.println("Cual es la distancia minima de despegue?");
