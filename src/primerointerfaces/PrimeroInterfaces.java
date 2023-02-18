@@ -10,6 +10,8 @@ import java.util.Scanner;
 public class PrimeroInterfaces {
 
     public static void MENU() {
+        
+        
         System.out.println();
         System.out.println("1).Dar Transatlantico de alta");
         System.out.println("2).Dar Container de alta");
@@ -31,12 +33,17 @@ public class PrimeroInterfaces {
     }
 
     public static void main(String[] args) {
+        
+        
+        
         Scanner sn = new Scanner(System.in);
         ArrayList<Barco> barcos = new ArrayList();
         barcos.add(new Transatlantico());
         barcos.add(new Container());
         int caso;
-        int buscar;
+        int busc;
+        
+        
         do {
             MENU();
             caso = sn.nextInt();
@@ -52,47 +59,47 @@ public class PrimeroInterfaces {
                     barcos.add(con);
                     break;
                 case 3:
-                    buscar = buscarBarco(barcos);
-                    if (buscar != -1) {
-                        barcos.get(buscar).verDatos();
+                    busc = buscarBarco(barcos);
+                    if (busc != -1) {
+                        barcos.get(busc).verDatos();
                     } else {
                         System.out.println("No se encontro barco");
                     }
                     break;
                 case 4:
-                    buscar = buscarBarco(barcos);
+                    busc = buscarBarco(barcos);
                     System.out.println("Donde atraca?");
                     String lugar = sn.next();
                     System.out.println("Hora atraque");
                     int hora = sn.nextInt();
-                    barcos.get(buscar).atracar(lugar, hora);
+                    barcos.get(busc).atracar(lugar, hora);
                     break;
                 case 5:
-                    buscar = buscarBarco(barcos);
-                    barcos.get(buscar).undirse();
+                    busc = buscarBarco(barcos);
+                    barcos.get(busc).undirse();
                     break;
                 case 6:
-                    buscar = buscarBarco(barcos);
-                    if (buscar != -1) {
-                        if (barcos.get(buscar) instanceof Container cont) {
+                    busc = buscarBarco(barcos);
+                    if (busc != -1) {
+                        if (barcos.get(busc) instanceof Container cont) {
                             cont.CambiarMax();
                         }
                         else{System.out.println("No es un barco Container");}
                     }
                     break;
                 case 7:
-                    buscar = buscarBarco(barcos);
-                    if (buscar != -1) {
-                        if (barcos.get(buscar) instanceof Container cont) {
+                    busc = buscarBarco(barcos);
+                    if (busc != -1) {
+                        if (barcos.get(busc) instanceof Container cont) {
                             cont.CambiarReal();
                         }
                         else{System.out.println("No es un barco Container");}
                     }
                     break;
                 case 8:
-                    buscar = buscarBarco(barcos);
-                    if (buscar != -1) {
-                        if (barcos.get(buscar) instanceof Transatlantico tra) {
+                    busc = buscarBarco(barcos);
+                    if (busc != -1) {
+                        if (barcos.get(busc) instanceof Transatlantico tra) {
                             tra.CambiarPasajeros();
                         }
                         else{System.out.println("No es un barco Transatlantico");}
@@ -100,9 +107,9 @@ public class PrimeroInterfaces {
                     
                     break;
                 case 9:
-                    buscar = buscarBarco(barcos);
-                    if (buscar != -1) {
-                        if (barcos.get(buscar) instanceof Transatlantico tra) {
+                    busc = buscarBarco(barcos);
+                    if (busc != -1) {
+                        if (barcos.get(busc) instanceof Transatlantico tra) {
                             tra.CambiarCamas();
                         }
                         else{System.out.println("No es un barco Transatlantico");}
@@ -110,9 +117,9 @@ public class PrimeroInterfaces {
                     
                     break;
                 case 10:
-                    buscar = buscarBarco(barcos);
-                    if (buscar != -1) {
-                        if (barcos.get(buscar) instanceof HidroAvion hidro) {
+                    busc = buscarBarco(barcos);
+                    if (busc != -1) {
+                        if (barcos.get(busc) instanceof HidroAvion hidro) {
                             hidro.alta();
                             barcos.add(hidro);
                         }
@@ -141,6 +148,8 @@ public class PrimeroInterfaces {
         System.out.println("Fin");
     }
 
+    
+    
     public static int buscarBarco(ArrayList<Barco> barcos) {
         Scanner sn = new Scanner(System.in);
         System.out.println("Nombre del barco");
