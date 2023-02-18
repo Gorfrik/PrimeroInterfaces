@@ -128,17 +128,19 @@ public class PrimeroInterfaces {
                     buscar = buscarBarco(barcos);
                     if (barcos.get(buscar) instanceof HidroAvion hidro) {
                         System.out.println("cual es la distancia minima?");
-                        int dismin=sn.nextInt();
+                        int dismin = sn.nextInt();
                         System.out.println("Cual es la potencia minima?");
-                        int potmin=sn.nextInt();
+                        int potmin = sn.nextInt();
                         System.out.println("cual es la velociada del viento?(k/h)");
-                        int viento=sn.nextInt();
+                        int viento = sn.nextInt();
                         System.out.println("Cual es el peso?");
-                        int peso=sn.nextInt();
-                        hidro.despegar(dismin, viento, potmin, peso);
-                        
-                        
-                        
+                        int peso = sn.nextInt();
+                        boolean resp = hidro.despegar(dismin, viento, potmin, peso);
+                        if (resp) {
+                            System.out.println("puede aterrizar");
+                        } else {
+                            System.out.println("No puede aterrizar");
+                        }
                     } else {
                         System.out.println("No es un HidroAvion");
                     }
@@ -146,10 +148,7 @@ public class PrimeroInterfaces {
                 case 12:
                     buscar = buscarBarco(barcos);
                     if (barcos.get(buscar) instanceof HidroAvion hidro) {
-                       
-                        
-                        
-                        
+
                     } else {
                         System.out.println("No es un HidroAvion");
                     }
@@ -157,10 +156,7 @@ public class PrimeroInterfaces {
                 case 13:
                     buscar = buscarBarco(barcos);
                     if (barcos.get(buscar) instanceof HidroAvion hidro) {
-                       
-                        
-                        
-                        
+
                     } else {
                         System.out.println("No es un HidroAvion");
                     }
@@ -168,10 +164,7 @@ public class PrimeroInterfaces {
                 case 14:
                     buscar = buscarBarco(barcos);
                     if (barcos.get(buscar) instanceof HidroAvion hidro) {
-                        
-                        
-                        
-                        
+
                     } else {
                         System.out.println("No es un HidroAvion");
                     }
@@ -179,8 +172,7 @@ public class PrimeroInterfaces {
                 case 15:
                     buscar = buscarBarco(barcos);
                     if (barcos.get(buscar) instanceof HidroAvion hidro) {
-                       
-                        
+
                     } else {
                         System.out.println("No es un HidroAvion");
                     }
