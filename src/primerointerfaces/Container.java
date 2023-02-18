@@ -3,10 +3,6 @@ package primerointerfaces;
 
 import java.util.Scanner;
 
-/**
- *
- * @author usuario
- */
 public class Container implements Barco {
 
     String nombre;
