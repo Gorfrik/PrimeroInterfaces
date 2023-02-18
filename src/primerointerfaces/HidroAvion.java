@@ -74,6 +74,11 @@ public class HidroAvion implements Barco, Avion {
 
     public boolean aterrizar(int distanciaMin, int velozViento) {
         boolean aterrizar = true;
+        
+        
+        
+        
+        
         return aterrizar;
     }
 

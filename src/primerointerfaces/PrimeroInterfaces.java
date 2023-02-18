@@ -19,7 +19,15 @@ public class PrimeroInterfaces {
         System.out.println("6).Cambiar maximo de contenedores");
         System.out.println("7).Cambiar el numero de contenedores real");
         System.out.println("8).Cambiar pasajeros");
-        System.out.println("8).Cambiar camas");
+        System.out.println("9).Cambiar camas");
+        System.out.println("-------------------------------------------");
+        System.out.println("10).Dar de alta hidroavion");
+        System.out.println("11).Puede despegar?");
+        System.out.println("12).Puede aterrizar?");
+        System.out.println("13).Cambiar potencia");
+        System.out.println("14).Cambiar distancia");
+        System.out.println("15).Ver peso");
+        System.out.println("16).Salir");
     }
 
     public static void main(String[] args) {
@@ -102,13 +110,31 @@ public class PrimeroInterfaces {
                     
                     break;
                 case 10:
-                    
+                    buscar = buscarBarco(barcos);
+                    if (buscar != -1) {
+                        if (barcos.get(buscar) instanceof HidroAvion hidro) {
+                            hidro.alta();
+                            barcos.add(hidro);
+                        }
+                        else{System.out.println("No es un HidroAvion");}
+                    }
                     break;
                 case 11:
                     
                     break;
                 case 12:
                     
+                    break;
+                case 13:
+                    
+                    break;
+                case 14:
+                    
+                    break;
+                case 15:
+                    
+                    break;
+                case 16:
                     break;
             }
         } while (caso != 5);
